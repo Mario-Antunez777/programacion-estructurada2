@@ -2,7 +2,7 @@
 # Estudiante: Nombre Apellido   Carnet: 2026-0000U
 
 # Una tupla es una colección ordenada e INMUTABLE
-producto = ("Arroz", "libra", 18.50)      # (nombre, unidad, precio en C$)
+producto = ("Arroz", "libra", 18.50)     # (nombre, unidad, precio en C$)
 
 # 1. Acceso por índice
 print("Producto:", producto[0])
@@ -17,7 +17,9 @@ compra = (
     ("Arroz", 5, 18.50),
     ("Frijoles", 3, 32.00),
     ("Azúcar", 2, 20.00),
-)
+    ("Café", 1, 120.00)
+) 
+
 
 total = 0
 for articulo, cantidad, precio_unitario in compra:
