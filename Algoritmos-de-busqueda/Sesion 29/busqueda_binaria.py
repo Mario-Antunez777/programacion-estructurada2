@@ -35,3 +35,6 @@ for n in tamanos:
     lin = contar_lineal(lista, objetivo)
     bina = contar_binaria(lista, objetivo)
     print("n =", n, "| lineal:", lin, "| binaria:", bina)
+#Cada vez que n se duplica, la búsqueda lineal también hace el
+#doble de revisiones (2000, 4000, 8000...), pero la binaria solo
+#sube 1 revisión (11, 12, 13, 14, 15).
