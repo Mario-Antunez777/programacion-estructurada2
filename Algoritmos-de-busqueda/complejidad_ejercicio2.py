@@ -24,3 +24,10 @@ for valor in codigos:
     pos, comp = busqueda_inversa(codigos, valor)
     total = total + comp
 print("Caso promedio:", total / n, "comparaciones")
+#Ahora la búsqueda empieza desde el final, 
+# entonces el mejor caso es buscar el último número (el 1000), 
+# porque es el primero que revisa y lo encuentra con 1 comparación.
+#  El promedio sigue dando 500.5 y el peor caso sigue dando 1000.
+#  Eso pasa porque si el número no existe, igual tiene que revisar toda la lista,
+#  y si puede estar en cualquier lugar, en promedio llega a la mitad.
+#  Lo único que cambió fue cuál número es el más fácil de encontrar.
