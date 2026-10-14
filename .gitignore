@@ -22,6 +22,3 @@ desktop.ini
 # Registros y pruebas
 *.log
 .pytest_cache/
-Algoritmos-de-busqueda/complejidad_ejercicio1.py
-Algoritmos-de-busqueda/complejidad_ejercicio2.py
-Algoritmos-de-busqueda/complejidad_ejercicio3.py
