@@ -24,12 +24,12 @@ La búsqueda lineal tiene un peor  caso de 22 comparaciones, porque revisa todas
 La búsqueda binaria tiene un peor caso de 5 comparaciones con estas 22 fechas. Para comprobarlo,  busca una fecha que no exista, como   2023-11-01, y se cuentan las comparaciones realizadas por el algoritmo.
 
 ### Pregunta 3 
-
-Al probar las dos fechas en Python, la primera fecha salió True porque el 9 de octubre es antes que el 16 de octubre. La segunda fecha salió False porque Python compara primero los días y el 31 es mayor que el 02. El formato AAAA-MM-DD es mejor porque permite ordenar las fechas de la más antigua a la más reciente. Si usamos DD/MM/AAAA, las fechas pueden quedar desordenadas y la búsqueda binaria podría no encontrar una fecha correctamente.
+La primera fecha dio True porque el 9 de octubre es antes que el 16 de octubre. La segunda dio False porque Python compara primero el año, luego  el mes y luego el día, y como el 31 es mayor que el 02 dio False.
+El formato AAAA-MM-DD es mejor porque las fechas quedan en orden, de la más vieja a la más nueva. Con DD/MM/AAAA se desordenan y la búsqueda binaria no funcionaría bien.
 
 
 ### Pregunta 4
-Las tasas aumentaban poco a poco en 2023. En 2025 no tendría mucho sentido buscar por tasa, porque el tipo de cambio se mantiene fijo y varias fechas tendrían la misma tasa.
+En 2023 las tasas iban subiendo poco a poco. En 2025 no sirve buscar por tasa porque el tipo de cambio casi no cambia y muchas fechas tienen la misma tasa.
 
 ### Pregunta 5
 La búsqueda lineal haría hasta 2,600 comparaciones y la búsqueda binaria aproximadamente 12 comparaciones en el peor caso.
