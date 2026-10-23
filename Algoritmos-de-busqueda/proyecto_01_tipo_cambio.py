@@ -44,9 +44,60 @@ def busqueda_binaria(lista, buscado):
     return posicion, comparaciones
 
 
-fecha = "2023-10-17"
-pos_l, comp_l = busqueda_lineal(fechas, fecha)
-pos_b, comp_b = busqueda_binaria(fechas, fecha)
-print("Tipo de cambio: C$", round(tasas[pos_b], 4), "por US$ 1")
-print("Búsqueda lineal : posición", pos_l, "con", comp_l, "comparaciones")
-print("Búsqueda binaria: posición", pos_b, "con", comp_b, "comparaciones")
+opcion = ""
+while opcion != "4":
+    print("=== TIPO DE CAMBIO OFICIAL · OCTUBRE 2023 ===")
+    print("1. Consultar tipo de cambio de una fecha")
+    print("2. Convertir dólares a córdobas")
+    print("3. Convertir córdobas a dólares")
+    print("4. Salir")
+    opcion = input("Elija una opción: ")
+
+    if opcion == "1":
+        fecha = input("Fecha (AAAA-MM-DD): ")
+        pos_l, comp_l = busqueda_lineal(fechas, fecha)
+        pos_b, comp_b = busqueda_binaria(fechas, fecha)
+        if pos_b == -1:
+            print("No hay registro para esa fecha (fin de semana o fuera del período).")
+            print("Búsqueda lineal :", comp_l, "comparaciones")
+            print("Búsqueda binaria:", comp_b, "comparaciones")
+        else:
+            print("Tipo de cambio: C$", round(tasas[pos_b], 4), "por US$ 1")
+            print("Búsqueda lineal : posición", pos_l, "con", comp_l, "comparaciones")
+            print("Búsqueda binaria: posición", pos_b, "con", comp_b, "comparaciones")
+        print()
+
+    elif opcion == "2":
+        fecha = input("Fecha (AAAA-MM-DD): ")
+        dolares = float(input("Monto en dólares: "))
+        if dolares <= 0:
+            print("El monto debe ser mayor que cero.")
+        else:
+            pos, comp = busqueda_binaria(fechas, fecha)
+            if pos == -1:
+                print("No hay registro para esa fecha (fin de semana o fuera del período).")
+            else:
+                cordobas = dolares * tasas[pos]
+                print("US$", round(dolares, 2), "equivalen a C$", round(cordobas, 2))
+        print()
+
+    elif opcion == "3":
+        fecha = input("Fecha (AAAA-MM-DD): ")
+        cordobas = float(input("Monto en córdobas: "))
+        if cordobas <= 0:
+            print("El monto debe ser mayor que cero.")
+        else:
+            pos, comp = busqueda_binaria(fechas, fecha)
+            if pos == -1:
+                print("No hay registro para esa fecha (fin de semana o fuera del período).")
+            else:
+                dolares = cordobas / tasas[pos]
+                print("C$", round(cordobas, 2), "equivalen a US$", round(dolares, 2))
+        print()
+
+    elif opcion == "4":
+        print("Hasta luego.")
+
+    else:
+        print("Opción no válida.")
+        print()
