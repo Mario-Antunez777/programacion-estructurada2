@@ -2,7 +2,7 @@
 # Nombre: Mario Andres Antunez Rivera
 # Carné: 6B9A59C2
 
-# Listas paralelas: la posición i de cada lista es el mismo estudiante
+
 carnes = ["2023-0118U", "2023-0274U", "2023-0391U", "2023-0456U", "2023-0582U",
           "2023-0647U", "2023-0733U", "2023-0819U", "2023-0905U", "2023-1042U",
           "2024-0063U", "2024-0127U", "2024-0215U", "2024-0298U", "2024-0344U",
@@ -38,7 +38,7 @@ carreras = ["Ingeniería en Sistemas", "Ingeniería Civil", "Ingeniería Industr
             "Ingeniería en Sistemas", "Ingeniería Eléctrica", "Arquitectura"]
 
 
-# Revisa que el carné tenga la forma AAAA-NNNNU
+
 def carne_valido(carne):
     if len(carne) != 10:
         return False
@@ -82,7 +82,6 @@ def busqueda_binaria(lista, buscado):
     return posicion, comparaciones
 
 
-# Lineal que no distingue mayúsculas de minúsculas
 def buscar_nombre(lista, buscado):
     posicion = -1
     comparaciones = 0
@@ -95,7 +94,6 @@ def buscar_nombre(lista, buscado):
     return posicion, comparaciones
 
 
-# Recorre toda la lista y guarda todas las posiciones donde aparece el valor
 def buscar_todos(lista, buscado):
     posiciones = []
     comparaciones = 0
